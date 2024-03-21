@@ -1,5 +1,6 @@
 require('dotenv').config();
 const routes = require('./routes/routes');
+const axios = require('./Task2/axios')
 const express = require('express');
 const mongoose = require('mongoose');
 const mongoString = process.env.DATABASE_URL;
@@ -17,3 +18,4 @@ app.listen(3000, () => {
     console.log(`Server started at ${3000}`)
 })
 app.use('/api', routes)
+app.use('/axios',axios)
